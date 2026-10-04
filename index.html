@@ -7,132 +7,84 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    :root {
-      --primary: #6C63FF;
-      --primary-dark: #4A42D0;
-      --primary-light: #8B85FF;
-      --tertiary: #B8A8FF;
-      --surface: #FFFFFF;
-      --surface-variant: #F5F5FF;
-      --text-primary: #1A1A2E;
-      --text-secondary: #6B6B80;
-      --text-muted: #999;
-      --danger: #E53E3E;
-      --success: #38A169;
-    }
-
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: Tahoma, 'Segoe UI', sans-serif;
       background: linear-gradient(135deg,
         #6C63FF 0%,
-        #5A52E0 50%,
-        #B8A8FF 100%);
+        #7D75FF 50%,
+        #A89BFF 100%);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       padding: 20px;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* زخرفة خفيفة في الخلفية */
-    body::before,
-    body::after {
-      content: '';
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      pointer-events: none;
-    }
-    body::before {
-      width: 300px; height: 300px;
-      top: -100px; right: -100px;
-    }
-    body::after {
-      width: 200px; height: 200px;
-      bottom: -80px; left: -80px;
     }
 
     .card {
-      background: var(--surface);
+      background: #FFFFFF;
       border-radius: 24px;
-      padding: 36px 28px 30px;
+      padding: 28px;
       text-align: center;
       max-width: 420px;
       width: 100%;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-      position: relative;
-      z-index: 1;
-      animation: cardIn 0.5s ease-out;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     }
 
-    @keyframes cardIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    /* أيقونة داخل مربع بنفسجي */
+    /* أيقونة داخل مربع بنفسجي فاتح */
     .icon-box {
       width: 90px;
       height: 90px;
       margin: 0 auto 20px;
-      background: linear-gradient(135deg,
-        rgba(108, 99, 255, 0.15) 0%,
-        rgba(108, 99, 255, 0.08) 100%);
+      background: rgba(108, 99, 255, 0.15);
       border-radius: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 48px;
-      border: 1px solid rgba(108, 99, 255, 0.15);
+      font-size: 50px;
     }
 
     h1 {
-      color: var(--text-primary);
-      font-size: 24px;
+      color: #1A1A2E;
+      font-size: 22px;
       font-weight: 700;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
     .subtitle {
-      color: var(--text-secondary);
+      color: #6B6B80;
       font-size: 13px;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
       line-height: 1.6;
     }
 
-    /* صندوق المعلومات */
+    /* صندوق المعلومات — نفس تصميم التطبيق */
     .info-box {
-      background: var(--surface-variant);
+      background: rgba(108, 99, 255, 0.08);
+      border: 1px solid rgba(108, 99, 255, 0.15);
       border-radius: 16px;
       padding: 16px;
-      margin-bottom: 22px;
+      margin-bottom: 24px;
       text-align: right;
-      border: 1px solid rgba(108, 99, 255, 0.12);
     }
 
     .info-row {
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 8px 0;
+      padding: 6px 0;
       font-size: 15px;
     }
 
-    .info-row .emoji {
-      font-size: 18px;
-      flex-shrink: 0;
-    }
+    .info-row .emoji { font-size: 18px; flex-shrink: 0; }
 
     .info-row .label {
-      color: var(--text-secondary);
+      color: #6B6B80;
       font-size: 13px;
       flex-shrink: 0;
     }
 
     .info-row .value {
-      color: var(--text-primary);
+      color: #1A1A2E;
       font-weight: 700;
       flex: 1;
       overflow: hidden;
@@ -148,55 +100,38 @@
       gap: 8px;
       width: 100%;
       padding: 16px;
-      background: var(--primary);
-      color: #fff;
+      background: #6C63FF;
+      color: #FFFFFF;
       text-decoration: none;
       border-radius: 14px;
       font-size: 15px;
       font-weight: 700;
       margin-bottom: 10px;
-      border: none;
       cursor: pointer;
       transition: all 0.25s ease;
-      font-family: inherit;
     }
 
-    .btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(108, 99, 255, 0.35);
-    }
-
-    .btn:active {
-      transform: translateY(0);
-    }
+    .btn:hover { background: #5A52E0; }
 
     .btn-outline {
       background: transparent;
-      color: var(--primary);
-      border: 2px solid var(--primary);
+      color: #6C63FF;
+      border: 2px solid #6C63FF;
     }
 
     .btn-outline:hover {
       background: rgba(108, 99, 255, 0.08);
-      color: var(--primary-dark);
-      box-shadow: 0 8px 20px rgba(108, 99, 255, 0.2);
     }
 
     .hint {
       font-size: 12px;
-      color: var(--text-muted);
+      color: #999;
       margin-top: 14px;
       line-height: 1.7;
     }
 
-    /* حالة التحميل */
-    .loading {
-      display: none;
-      text-align: center;
-      padding: 20px 0;
-    }
-
+    /* التحميل */
+    .loading { display: none; padding: 20px 0; }
     .loading.show { display: block; }
 
     .spinner {
@@ -204,61 +139,30 @@
       height: 44px;
       margin: 0 auto 14px;
       border: 4px solid rgba(108, 99, 255, 0.15);
-      border-top-color: var(--primary);
+      border-top-color: #6C63FF;
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
     }
 
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
-    .loading p {
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
+    .loading p { color: #6B6B80; font-size: 14px; }
 
     .content.hide { display: none; }
 
-    /* حالة الخطأ */
+    /* الخطأ */
     .error {
       display: none;
       padding: 20px;
       background: #FFE5E5;
       border-radius: 16px;
-      color: var(--danger);
+      color: #C00;
       font-size: 14px;
       line-height: 1.7;
-      margin-bottom: 8px;
     }
 
     .error.show { display: block; }
-
-    .error .error-icon {
-      font-size: 48px;
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    /* صندوق النجاح */
-    .success {
-      display: none;
-      padding: 20px;
-      background: #E6FFFA;
-      border-radius: 16px;
-      color: var(--success);
-      font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 8px;
-    }
-
-    .success.show { display: block; }
-
-    .success .success-icon {
-      font-size: 48px;
-      margin-bottom: 12px;
-      display: block;
-    }
+    .error .error-icon { font-size: 48px; display: block; margin-bottom: 12px; }
   </style>
 </head>
 <body>
@@ -283,7 +187,7 @@
 
       <a id="openAppBtn" class="btn" href="#">🔓 فتح التطبيق والانضمام</a>
       <a id="playStoreBtn" class="btn btn-outline"
-         href="https://play.google.com/store/apps/details?id=YOUR_PACKAGE_ID">
+         href="https://play.google.com/store/apps/details?id=com.hossam_note_27.smart_note_27">
         ⬇️ تثبيت التطبيق
       </a>
 
@@ -300,12 +204,7 @@
 
     <div id="error" class="error">
       <span class="error-icon">⚠️</span>
-      <span id="errorText">رابط غير صالح</span>
-    </div>
-
-    <div id="success" class="success">
-      <span class="success-icon">✅</span>
-      <span id="successText">تم فتح التطبيق بنجاح</span>
+      <span id="errorText"></span>
     </div>
   </div>
 
@@ -319,7 +218,6 @@
     const contentEl = document.getElementById('content');
     const loadingEl = document.getElementById('loading');
     const errorEl   = document.getElementById('error');
-    const successEl = document.getElementById('success');
 
     if (!noteId) {
       document.getElementById('errorText').textContent =
@@ -338,31 +236,21 @@
       document.getElementById('openAppBtn').href = deepLink;
 
       const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-      const isAndroid = /Android/i.test(navigator.userAgent);
 
       if (isMobile) {
-        // إظهار التحميل، ومحاولة فتح التطبيق
         loadingEl.classList.add('show');
         contentEl.classList.add('hide');
 
         let appOpened = false;
-
-        // ✅ نستخدم visibilitychange عشان نعرف لو التطبيق اتفتح فعلاً
         const handleVisibilityChange = function() {
-          if (document.hidden) {
-            appOpened = true;
-            successEl.classList.add('show');
-            loadingEl.classList.remove('show');
-          }
+          if (document.hidden) appOpened = true;
         };
         document.addEventListener('visibilitychange', handleVisibilityChange);
 
-        // محاولة الفتح
         setTimeout(function() {
           window.location.href = deepLink;
         }, 100);
 
-        // لو التطبيق مفتحش خلال 2.5s → نرجّع المستخدم للشاشة الأساسية
         setTimeout(function() {
           document.removeEventListener('visibilitychange', handleVisibilityChange);
           if (!appOpened) {
