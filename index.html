@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>انضم للنوتة — نوتة ذكية</title>
+  <title>نوتة ذكية</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -67,13 +67,13 @@
     <div id="content" class="content">
       <div class="info-box">
         <div class="info-row">
-          <span>📖</span>
-          <span class="label">النوتة:</span>
+          <span id="noteIcon">📖</span>
+          <span class="label" id="noteLabel">النوتة:</span>
           <span class="value" id="noteName">جاري التحميل...</span>
         </div>
         <div class="info-row">
           <span>👤</span>
-          <span class="label">من:</span>
+          <span class="label" id="fromLabel">من:</span>
           <span class="value" id="senderName">...</span>
         </div>
       </div>
@@ -105,16 +105,34 @@
     const title  = params.get('title') || 'نوتة';
     const sender = params.get('from') || 'مستخدم';
 
-    if (!noteId) {
+    const chatId = params.get('chat');          // رقم المستخدم الفريد (6 أرقام) لرابط الشات
+    const isChat = chatId && /^\d{6}$/.test(chatId);
+
+    function safeDecode(v) {
+      try { return decodeURIComponent(v); } catch (e) { return v; }
+    }
+
+    if (!noteId && !isChat) {
       document.getElementById('error').textContent = '⚠️ رابط غير صالح';
       document.getElementById('error').classList.add('show');
       document.getElementById('content').classList.add('hide');
     } else {
-      document.getElementById('noteName').textContent = '"' + decodeURIComponent(title) + '"';
-      document.getElementById('senderName').textContent = decodeURIComponent(sender);
-
-      const deepLink = 'io.supabase.smartnote://join?noteId=' + noteId +
-                       (invId ? '&invId=' + invId : '');
+      let deepLink;
+      if (isChat) {
+        // 💬 رابط شات: يفتح التطبيق على محادثة مع صاحب الرابط
+        document.getElementById('noteIcon').textContent = '💬';
+        document.getElementById('noteLabel').textContent = 'جلسة:';
+        document.getElementById('noteName').textContent = 'محادثة جديدة';
+        document.getElementById('fromLabel').textContent = 'مع:';
+        document.getElementById('senderName').textContent = safeDecode(sender);
+        document.getElementById('openAppBtn').textContent = '💬 فتح التطبيق وبدء المحادثة';
+        deepLink = 'io.supabase.smartnote://chat?id=' + chatId;
+      } else {
+        document.getElementById('noteName').textContent = '"' + safeDecode(title) + '"';
+        document.getElementById('senderName').textContent = safeDecode(sender);
+        deepLink = 'io.supabase.smartnote://join?noteId=' + noteId +
+                   (invId ? '&invId=' + invId : '');
+      }
 
       document.getElementById('openAppBtn').href = deepLink;
 
