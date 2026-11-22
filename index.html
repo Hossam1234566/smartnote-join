@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>نوتة ذكية</title>
+  <title>ملاحظة ذكية</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -62,14 +62,14 @@
 <body>
   <div class="card">
     <div class="icon">📝</div>
-    <h1>نوتة ذكية</h1>
+    <h1>ملاحظة ذكية</h1>
 
     <div id="content" class="content">
       <div class="info-box">
         <div class="info-row">
           <span id="noteIcon">📖</span>
-          <span class="label" id="noteLabel">النوتة:</span>
-          <span class="value" id="noteName">جاري التحميل...</span>
+          <span class="label" id="noteLabel">الملاحظة:</span>
+          <span class="value" id="noteName">جارٍ التحميل...</span>
         </div>
         <div class="info-row">
           <span>👤</span>
@@ -85,14 +85,14 @@
       </a>
 
       <p class="hint">
-        💡 لو التطبيق مثبّت هيفتح تلقائياً<br>
-        لو لأ، هتضغط "تثبيت التطبيق" وبعدها ترجع للينك تاني
+        💡 إن كان التطبيق مثبّتًا لديك فسيُفتح تلقائيًا<br>
+        وإن لم يكن مثبّتًا فاضغط «تثبيت التطبيق»، ثم عُد إلى هذا الرابط مرة أخرى
       </p>
     </div>
 
     <div id="loading" class="loading">
       <div class="spinner"></div>
-      <p>⏳ جاري فتح التطبيق...</p>
+      <p>⏳ جارٍ فتح التطبيق...</p>
     </div>
 
     <div id="error" class="error"></div>
@@ -102,10 +102,10 @@
     const params = new URLSearchParams(window.location.search);
     const noteId = params.get('noteId');
     const invId  = params.get('invId');
-    const title  = params.get('title') || 'نوتة';
+    const title  = params.get('title') || 'ملاحظة';
     const sender = params.get('from') || 'مستخدم';
 
-    const chatId = params.get('chat');          // رقم المستخدم الفريد (6 أرقام) لرابط الشات
+    const chatId = params.get('chat');          // الرقم الفريد للمستخدم (6 أرقام) لرابط المحادثة
     const isChat = chatId && /^\d{6}$/.test(chatId);
 
     function safeDecode(v) {
@@ -119,7 +119,7 @@
     } else {
       let deepLink;
       if (isChat) {
-        // 💬 رابط شات: يفتح التطبيق على محادثة مع صاحب الرابط
+        // 💬 رابط محادثة: يفتح التطبيق على محادثة مع صاحب الرابط
         document.getElementById('noteIcon').textContent = '💬';
         document.getElementById('noteLabel').textContent = 'جلسة:';
         document.getElementById('noteName').textContent = 'محادثة جديدة';
@@ -146,7 +146,7 @@
         setTimeout(function() {
           document.getElementById('loading').classList.remove('show');
           document.getElementById('content').classList.remove('hide');
-          document.getElementById('openAppBtn').textContent = '🔓 حاول فتح التطبيق تاني';
+          document.getElementById('openAppBtn').textContent = '🔓 حاول فتح التطبيق مرة أخرى';
         }, 2500);
       }
     }
