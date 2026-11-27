@@ -1,57 +1,211 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>سياسة الخصوصية - ملاحظة ذكية</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>سياسة الخصوصية — ملاحظة ذكية | Privacy Policy — Smart Note</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Tahoma,sans-serif;background:#F5F5FF;color:#333;line-height:1.9;padding:20px}
-.wrap{max-width:760px;margin:0 auto;background:#fff;border-radius:20px;padding:28px 24px;box-shadow:0 8px 30px rgba(108,99,255,.15)}
-h1{color:#6C63FF;font-size:24px;margin-bottom:6px}
-h2{color:#4A47D4;font-size:18px;margin:22px 0 6px}
-p,li{font-size:15px}
-ul{padding-right:22px}
-.date{color:#999;font-size:13px;margin-bottom:12px}
-a{color:#6C63FF}
+:root{--bg:#f6f5fb;--card:#fff;--tx:#1d1b2e;--mu:#6a6882;--ac:#5b4bb8;--ln:#e4e1f2}
+@media(prefers-color-scheme:dark){:root{--bg:#12111c;--card:#1b1a29;--tx:#ececf6;--mu:#a3a1ba;--ac:#9a8cff;--ln:#2a2940}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,"Segoe UI",Tahoma,Arial,sans-serif;line-height:1.85}
+.w{max-width:820px;margin:0 auto;padding:24px 16px 60px}
+header{text-align:center;padding:20px 0 6px}
+h1{font-size:26px;margin:8px 0 4px}h2{font-size:19px;margin:28px 0 6px;color:var(--ac)}
+.mu{color:var(--mu);font-size:14px}
+.card{background:var(--card);border:1px solid var(--ln);border-radius:16px;padding:6px 20px 20px}
+ul{padding-inline-start:22px}li{margin:4px 0}
+.lang{display:flex;gap:8px;justify-content:center;margin:14px 0}
+.lang button{border:1px solid var(--ln);background:var(--card);color:var(--tx);padding:8px 18px;border-radius:20px;font-size:15px;cursor:pointer}
+.lang button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:8px 0}
+th,td{border:1px solid var(--ln);padding:8px;text-align:start;vertical-align:top}th{background:rgba(120,100,220,.1)}
+a{color:var(--ac)}
 </style>
 </head>
-<body><div class="wrap">
-<h1>سياسة الخصوصية</h1>
-<p class="date">آخر تحديث: 22 نوفمبر 2026</p>
-<p>تشرح هذه السياسة ما نجمعه من بيانات في تطبيق «ملاحظة ذكية» وكيف نستخدمها ونحميها.</p>
+<body><div class="w">
+<header><h1>سياسة الخصوصية</h1><div class="mu" id="sub">تطبيق «ملاحظة ذكية» (Smart Note) — آخر تحديث: 27 نوفمبر 2026</div></header>
+<div class="lang"><button id="bAr" class="on" onclick="setLang('ar')">العربية</button><button id="bEn" onclick="setLang('en')">English</button></div>
 
-<h2>1. البيانات التي نجمعها</h2>
+<!-- ============================= العربية ============================= -->
+<div class="card" id="ar">
+<h2>1. مقدمة</h2>
+<p>«ملاحظة ذكية» تطبيق لتدوين الملاحظات والمذاكرة والأدوات اليومية. نوضّح هنا ما نجمعه من بيانات، ولماذا، ومع من تُعالَج، وما هي حقوقك. باستخدامك التطبيق فإنك توافق على هذه السياسة.</p>
+
+<h2>2. الفئة العمرية</h2>
+<p>التطبيق مخصص لمن تبلغ أعمارهم 13 عامًا فأكثر. لا نجمع بيانات من هم دون هذا العمر عن قصد، وإذا علمنا بذلك فسنحذف الحساب.</p>
+
+<h2>3. البيانات التي نجمعها</h2>
+<table>
+<tr><th>النوع</th><th>التفاصيل</th><th>الغرض</th></tr>
+<tr><td>بيانات الحساب</td><td>الاسم، البريد الإلكتروني، رقم الهاتف، تاريخ الميلاد، الجنس، الصورة الشخصية، معرّف مستخدم فريد</td><td>إنشاء الحساب وإدارته والتحقق منه</td></tr>
+<tr><td>محتوى المستخدم</td><td>الملاحظات ومحتواها، والصور والتسجيلات الصوتية والفيديو والملفات التي تضيفها إليها، والنسخ الاحتياطية</td><td>تشغيل الميزات الأساسية والمزامنة بين الأجهزة</td></tr>
+<tr><td>الرسائل والتفاعل</td><td>رسائل الدردشة، والمنشورات والردود في «مساحة التواصل»، والدعوات والإشعارات، والبلاغات</td><td>تشغيل الدردشة والتعاون في الملاحظات والمجتمع، والسلامة</td></tr>
+<tr><td>معرّفات الجهاز</td><td>معرّف الجهاز واسمه، ورمز الإشعارات (FCM)، وآخر ظهور</td><td>الأمان، وتنبيهات الدخول، وإرسال الإشعارات</td></tr>
+<tr><td>إعدادات واستخدام</td><td>التفضيلات (اللغة، المظهر، الأدوات الظاهرة)، وسجل بعض الأحداث داخل الملاحظات المشتركة</td><td>تخصيص التطبيق وعرض سجل التعديلات للمشاركين</td></tr>
+</table>
+<p><strong>ما لا نجمعه:</strong> لا نجمع موقعك الجغرافي، ولا جهات اتصالك، ولا بياناتك المالية، ولا نستخدم إعلانات أو أدوات تتبّع إعلاني أو تحليلات سلوكية.</p>
+
+<h2>4. الأذونات التي يطلبها التطبيق</h2>
 <ul>
-<li>بيانات الحساب: الاسم والبريد الإلكتروني ورقم الهاتف وتاريخ الميلاد والجنس.</li>
-<li>المحتوى الذي تنشئه: الملاحظات والصور والتسجيلات الصوتية والنسخ الاحتياطية.</li>
-<li>الرسائل والمنشورات والردود التي ترسلها داخل التطبيق.</li>
-<li>بيانات الاستخدام لتحسين التطبيق.</li>
-<li>معرّف الجهاز ورمز الإشعارات لأغراض الأمان وإرسال الإشعارات.</li>
+<li><strong>الكاميرا:</strong> لتصوير الملاحظات ومسح المستندات وقراءة رموز QR.</li>
+<li><strong>الميكروفون:</strong> لتسجيل الصوت داخل الملاحظات، وللإملاء الصوتي.</li>
+<li><strong>الإشعارات:</strong> للتذكيرات والمنبّه ورسائل الدردشة.</li>
+<li><strong>المنبّهات الدقيقة وعرض المنبّه على الشاشة:</strong> ليرنّ المنبّه في وقته بالضبط ويعرض صورتك على الشاشة، حتى وهي مقفولة.</li>
+<li><strong>البصمة/القفل الحيوي:</strong> لقفل الملاحظات. تُعالَج محليًا على جهازك فقط، ولا نصل إلى بصمتك.</li>
+<li><strong>التخزين والملفات:</strong> لاختيار الصور والملفات والأصوات التي تريد إضافتها.</li>
+<li><strong>البلوتوث (الاتصال بالأجهزة القريبة):</strong> للتعرّف على سماعات البلوتوث وتشغيل الصوت والتسجيل عبرها. لا نبحث عن أجهزة ولا نخزّن بياناتها.</li>
+<li><strong>الإنترنت وإعادة التشغيل:</strong> للمزامنة، ولإعادة جدولة المنبّهات بعد إعادة تشغيل الهاتف.</li>
 </ul>
 
-<h2>2. بيانات تُحفظ على جهازك فقط</h2>
-<p>العادات وبطاقات المراجعة والامتحانات والدرجات والمنبّهات وإعدادات مواقيت الصلاة والتسبيح تُحفظ على جهازك ولا تُرسل إلى خوادمنا.</p>
-
-<h2>3. مواقيت الصلاة والموقع</h2>
-<p>تُحسب المواقيت على جهازك اعتمادًا على المدينة التي تختارها، ولا نصل إلى موقعك الجغرافي (GPS).</p>
-
-<h2>4. مدة الاحتفاظ بالبيانات</h2>
+<h2>5. كيف نستخدم بياناتك</h2>
 <ul>
-<li>تُحذف الرسائل تلقائيًا من خوادمنا بعد 48 ساعة، باستثناء الرسائل التي يثبّتها المستخدم.</li>
-<li>تختفي المنشورات المجهولة تلقائيًا بعد ساعتين، لكنها تبقى مرتبطة بالحساب لدى الإدارة لأغراض الأمان ومعالجة البلاغات.</li>
-<li>لا نحذف حسابك بسبب عدم الاستخدام، وتبقى بياناتك محفوظة إلى أن تطلب حذفها.</li>
+<li>تقديم خدمات التطبيق (الملاحظات، المزامنة، الدردشة، المشاركة، المجتمع).</li>
+<li>التحقق من هويتك وحماية الحساب ومنع إساءة الاستخدام.</li>
+<li>إرسال إشعارات تطلبها أنت (تذكيرات، رسائل، دعوات).</li>
+<li>مراجعة البلاغات والمحتوى المخالف عبر فلترة آلية ومراجعة الإدارة.</li>
+</ul>
+<p>لا نبيع بياناتك ولا نؤجّرها، ولا نستخدمها للإعلانات.</p>
+
+<h2>6. مزوّدو الخدمة (أطراف تعالج البيانات نيابةً عنا)</h2>
+<p>نستعين بمزوّدين لتشغيل التطبيق، ويعالجون البيانات لتقديم الخدمة فقط:</p>
+<ul>
+<li><strong>Supabase:</strong> قاعدة البيانات والمصادقة وتخزين الملفات.</li>
+<li><strong>Google (Firebase Cloud Messaging وتسجيل الدخول بحساب Google):</strong> لإرسال الإشعارات وتسجيل الدخول عند اختيارك.</li>
+<li><strong>Akedly:</strong> لإرسال رمز التحقق إلى رقم هاتفك.</li>
+<li><strong>YouTube:</strong> عند تشغيل مقاطع الفيديو في ميزات المشاهدة المشتركة، يُحمَّل مشغّل يوتيوب ويخضع لسياساتهم.</li>
+</ul>
+<p>الإملاء الصوتي والقراءة الصوتية يعتمدان على خدمات النطق في جهازك، وقد يعالج مزوّدها الصوت بحسب إعدادات هاتفك. استخراج النص من الصور (الماسح) يتم داخل جهازك.</p>
+
+<h2>7. المشاركة مع مستخدمين آخرين</h2>
+<ul>
+<li><strong>الملاحظة المشتركة:</strong> عند دعوة شخص إلى ملاحظة، يرى محتواها وأسماء المشاركين وسجل تعديلاتها، ولا يرى ملاحظاتك الأخرى.</li>
+<li><strong>الدردشة:</strong> رسائلك تصل إلى من تراسله فقط.</li>
+<li><strong>المنشورات والردود المجهولة:</strong> لا يظهر اسمك للمستخدمين الآخرين، لكن المنشور يبقى مرتبطًا بحسابك لدى الإدارة لأغراض الأمان ومعالجة البلاغات.</li>
 </ul>
 
-<h2>5. حذف الحساب</h2>
-<p>يمكنك طلب حذف حسابك من التطبيق: الإعدادات ← حذف الحساب. تفاصيل الحذف في <a href="delete-account.html">صفحة حذف الحساب</a>.</p>
+<h2>8. حماية البيانات</h2>
+<ul>
+<li>تُنقل البيانات عبر اتصال مشفّر (HTTPS).</li>
+<li>تُطبَّق قواعد وصول على قاعدة البيانات تمنع المستخدم من الوصول إلى بيانات غيره.</li>
+<li>النسخ الاحتياطية في مساحة خاصة لا يصل إليها غير صاحبها.</li>
+<li>مع ذلك لا توجد وسيلة نقل أو تخزين آمنة بالكامل، ونعمل على تحسين الحماية باستمرار.</li>
+</ul>
+<p><strong>تنبيه:</strong> صور الملاحظات والملفات الصوتية والصور الشخصية تُخزَّن في مساحات يمكن الوصول إليها لمن يملك الرابط الكامل. الروابط طويلة وغير قابلة للتخمين عمليًا، لكن لا تشارك رابط ملف مع من لا تريده أن يراه.</p>
 
-<h2>6. خدمات الأطراف الثالثة</h2>
-<p>نستخدم Supabase لتخزين الحساب والبيانات، وFirebase لإرسال الإشعارات. لا نبيع بياناتك لأي جهة.</p>
+<h2>9. مدة الاحتفاظ والحذف</h2>
+<ul>
+<li>نحتفظ ببياناتك طوال وجود حسابك.</li>
+<li>يمكنك حذف حسابك من <strong>الإعدادات ← حذف الحساب</strong>. يُجدول الحذف لمدة 30 يومًا يمكنك خلالها استرجاع حسابك بتسجيل الدخول، وبعدها تُحذف بياناتك وملفاتك نهائيًا من خوادمنا.</li>
+<li>يمكنك أيضًا طلب الحذف عبر البريد أو من <a href="delete-account.html">صفحة حذف الحساب</a>.</li>
+<li>قد نحتفظ بسجلات محدودة عند الضرورة للأمان أو لالتزام قانوني.</li>
+<li>الملاحظات المحذوفة تبقى في سلة المحذوفات 30 يومًا ثم تُحذف.</li>
+</ul>
 
-<h2>7. السن</h2>
-<p>التطبيق لمن بلغ 13 سنة فأكثر.</p>
+<h2>10. حقوقك</h2>
+<p>لك الحق في الاطلاع على بياناتك وتعديلها (من الملف الشخصي)، وفي حذفها، وفي سحب موافقتك بحذف الحساب أو إيقاف الأذونات من إعدادات هاتفك. للاستفسار أو لأي طلب راسلنا.</p>
 
-<h2>8. التواصل</h2>
-<p>لأي استفسار أو طلب بخصوص بياناتك: <a href="mailto:Smart.note.support@gmail.com">Smart.note.support@gmail.com</a></p>
-</div></body></html>
+<h2>11. التحديثات</h2>
+<p>قد نحدّث هذه السياسة من وقت لآخر، وسنخطرك بأي تغيير جوهري عبر التطبيق. يظهر تاريخ آخر تحديث أعلى الصفحة.</p>
+
+<h2>12. التواصل</h2>
+<p>لأي استفسار أو طلب بخصوص خصوصيتك: <a href="mailto:Smart.note.support@gmail.com">Smart.note.support@gmail.com</a></p>
+</div>
+
+<!-- ============================= English ============================= -->
+<div class="card" id="en" style="display:none;direction:ltr;text-align:left">
+<h2>1. Introduction</h2>
+<p>“Smart Note” is an app for notes, studying and everyday tools. This policy explains what data we collect, why, who processes it, and what rights you have. By using the app you agree to this policy.</p>
+
+<h2>2. Age</h2>
+<p>The app is intended for users aged 13 and over. We do not knowingly collect data from younger users and will delete any such account if we learn of it.</p>
+
+<h2>3. Data we collect</h2>
+<table>
+<tr><th>Type</th><th>Details</th><th>Purpose</th></tr>
+<tr><td>Account data</td><td>Name, email, phone number, date of birth, gender, profile photo, a unique user ID</td><td>Creating, managing and verifying your account</td></tr>
+<tr><td>User content</td><td>Your notes, plus the images, audio, video and files you add, and backups</td><td>Core features and syncing across devices</td></tr>
+<tr><td>Messages &amp; interactions</td><td>Chat messages, posts and replies in the community space, invitations, notifications, reports</td><td>Chat, note collaboration, community, and safety</td></tr>
+<tr><td>Device identifiers</td><td>Device ID and name, push token (FCM), last-seen time</td><td>Security, sign-in alerts, delivering notifications</td></tr>
+<tr><td>Settings &amp; usage</td><td>Preferences (language, theme, visible tools); a log of some events inside shared notes</td><td>Personalising the app and showing edit history to collaborators</td></tr>
+</table>
+<p><strong>What we do not collect:</strong> your location, your contacts or your financial data. We do not use ads, advertising trackers or behavioural analytics.</p>
+
+<h2>4. Permissions the app requests</h2>
+<ul>
+<li><strong>Camera:</strong> photographing notes, scanning documents, reading QR codes.</li>
+<li><strong>Microphone:</strong> recording audio in notes and voice dictation.</li>
+<li><strong>Notifications:</strong> reminders, alarms and chat messages.</li>
+<li><strong>Exact alarms and full-screen alarm display:</strong> so an alarm rings at the exact time and shows your chosen image, even when the screen is locked.</li>
+<li><strong>Biometrics:</strong> to lock notes. It is processed on your device only; we never access your fingerprint or face data.</li>
+<li><strong>Storage / files:</strong> to pick images, files and sounds you want to add.</li>
+<li><strong>Bluetooth (nearby devices):</strong> to detect Bluetooth headsets and play or record audio through them. We do not scan for devices or store their data.</li>
+<li><strong>Internet and boot completed:</strong> to sync, and to reschedule alarms after your phone restarts.</li>
+</ul>
+
+<h2>5. How we use your data</h2>
+<ul>
+<li>To provide the app’s services (notes, sync, chat, sharing, community).</li>
+<li>To verify your identity, protect accounts and prevent abuse.</li>
+<li>To send notifications you ask for (reminders, messages, invitations).</li>
+<li>To review reports and violating content through automated filtering and moderator review.</li>
+</ul>
+<p>We do not sell or rent your data and do not use it for advertising.</p>
+
+<h2>6. Service providers (processing data on our behalf)</h2>
+<ul>
+<li><strong>Supabase:</strong> database, authentication and file storage.</li>
+<li><strong>Google (Firebase Cloud Messaging and Google Sign-In):</strong> push notifications and sign-in when you choose it.</li>
+<li><strong>Akedly:</strong> sending a verification code to your phone number.</li>
+<li><strong>YouTube:</strong> the YouTube player is loaded in shared-watching features and is subject to YouTube’s own policies.</li>
+</ul>
+<p>Voice dictation and read-aloud rely on your device’s speech services; the provider of those services may process audio according to your phone’s settings. Text extraction from images (the scanner) runs on your device.</p>
+
+<h2>7. Sharing with other users</h2>
+<ul>
+<li><strong>Shared notes:</strong> a person you invite can see that note’s content, the collaborators’ names and its edit history, but not your other notes.</li>
+<li><strong>Chat:</strong> your messages go only to the person you message.</li>
+<li><strong>Anonymous posts and replies:</strong> your name is hidden from other users, but the post remains linked to your account for the moderators, for safety and report handling.</li>
+</ul>
+
+<h2>8. Data protection</h2>
+<ul>
+<li>Data is transmitted over encrypted connections (HTTPS).</li>
+<li>Database access rules prevent a user from reaching another user’s data.</li>
+<li>Backups are kept in a private space accessible only to their owner.</li>
+<li>No method of transmission or storage is completely secure, and we keep improving our protections.</li>
+</ul>
+<p><strong>Note:</strong> note images, audio files and profile pictures are stored in locations that can be opened by anyone who has the full link. The links are long and practically impossible to guess, but do not share a file link with anyone you do not want to see it.</p>
+
+<h2>9. Retention and deletion</h2>
+<ul>
+<li>We keep your data while your account exists.</li>
+<li>You can delete your account from <strong>Settings → Delete account</strong>. Deletion is scheduled for 30 days, during which you can restore the account by signing in; afterwards your data and files are permanently deleted from our servers.</li>
+<li>You can also request deletion by email or from the <a href="delete-account.html">account deletion page</a>.</li>
+<li>We may keep limited records where needed for security or a legal obligation.</li>
+<li>Deleted notes stay in the trash for 30 days and are then removed.</li>
+</ul>
+
+<h2>10. Your rights</h2>
+<p>You may access and correct your data (from your profile), delete it, and withdraw consent by deleting your account or turning off permissions in your phone settings. Contact us for any question or request.</p>
+
+<h2>11. Changes</h2>
+<p>We may update this policy from time to time and will notify you of material changes in the app. The “last updated” date appears at the top of the page.</p>
+
+<h2>12. Contact</h2>
+<p>For any question or request about your privacy: <a href="mailto:Smart.note.support@gmail.com">Smart.note.support@gmail.com</a></p>
+</div>
+</div>
+<script>
+function setLang(l){
+  var ar=l==='ar';
+  document.getElementById('ar').style.display=ar?'':'none';
+  document.getElementById('en').style.display=ar?'none':'';
+  document.getElementById('bAr').className=ar?'on':'';
+  document.getElementById('bEn').className=ar?'':'on';
+  document.documentElement.lang=l;document.documentElement.dir=ar?'rtl':'ltr';
+  document.querySelector('h1').textContent=ar?'سياسة الخصوصية':'Privacy Policy';
+  document.getElementById('sub').textContent=ar?'تطبيق «ملاحظة ذكية» (Smart Note) — آخر تحديث: 27 نوفمبر 2026':'Smart Note app — Last updated: 27 November 2026';
+}
+if((navigator.language||'').toLowerCase().indexOf('ar')!==0 && !location.hash){setLang('en');}
+</script>
+</body></html>
